@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="Club.cs" />
-    <Compile Include="ITimeTable.cs" />
+    <Compile Include="TimeTables\TimeTable.cs" />
+    <Compile Include="TimeTables\ITimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
