@@ -9,7 +9,7 @@ using BusinessLogic.Carts;
 
 namespace BusinessLogic.Clubs
 {
-    abstract class Club
+    public abstract class Club
     {
         protected ITimeTable table;
 
