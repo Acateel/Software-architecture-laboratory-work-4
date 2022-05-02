@@ -10,13 +10,36 @@ namespace BusinessLogic.Carts
 {
     public abstract class Cart
     {
-        protected ITimeTable table;
+        public ITimeTable Table { get; protected set; }
 
         protected Cart(ITimeTable table)
         {
-            this.table = table;
+            this.Table = table;
         }
 
-        public abstract bool checkCart(Club club);
+        public abstract bool CheckCart(Club club);
+
+        public bool CheckTime(int time)
+        {
+            return !Table.IsTimeFree(time);
+        }
+
+        public bool VisitClub(Club club, int time)
+        {
+            if(CheckCart(club) && CheckTime(time))
+            {
+                ResetTemporaty(time);
+                return true;
+            }
+            return false;
+        }
+
+        private void ResetTemporaty(int time)
+        {
+            if (Table.IsTimeTemporary(time))
+            {
+                Table.SetFree(time);
+            }
+        }
     }
 }
