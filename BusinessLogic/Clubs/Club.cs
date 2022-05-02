@@ -18,7 +18,10 @@ namespace BusinessLogic.Clubs
             this.table = table;
         }
 
-        public abstract bool Visit();
+        public void Visit()
+        {
+            throw new ClubException("Cannot visit club without cart");
+        }
         public abstract bool Visit(Cart cart);
         public abstract Cart BuyClubCart();
         public abstract Cart BuySpecialCart();
