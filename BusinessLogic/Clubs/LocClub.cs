@@ -1,5 +1,6 @@
 ﻿using BusinessLogic.Carts;
 using BusinessLogic.TimeTables;
+using BusinessLogic.Timers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,27 +21,39 @@ namespace BusinessLogic.Clubs
 
         public override bool Visit(Cart cart)
         {
-            throw new NotImplementedException();
+            int time = Timer.GetTime();
+            if (!table.IsTimeFree(time))
+            {
+                return false;
+            }
+            return cart.VisitClub(this, time);
         }
 
-        public override Cart BuyClubCart()
+        public override Cart BuyClubCart(ITimeTable timeTable)
         {
-            throw new NotImplementedException();
+            return new ClubCart(this, timeTable);
         }
 
-        public override Cart BuySpecialCart()
+        public override Cart BuySpecialCart(ITimeTable timeTable)
         {
-            throw new NotImplementedException();
+            return new SpecialCart(Location, timeTable);
         }
 
-        public override Cart SingUp()
+        public override Cart SingUp(int time)
         {
-            throw new NotImplementedException();
+            ITimeTable timeTable = new TimeTable();
+            timeTable.SetTemporary(time);
+            return new TempCart(this, timeTable);
         }
 
-        public override bool SingUp(Cart cart)
+        public override bool SingUp(Cart cart, int time)
         {
-            throw new NotImplementedException();
+            if (cart.CheckTime(time) || !cart.CheckCart(this))
+            {
+                return false;
+            }
+            cart.Table.SetTemporary(time);
+            return true;
         }
     }
 }

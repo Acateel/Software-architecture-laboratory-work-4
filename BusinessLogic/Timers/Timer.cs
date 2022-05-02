@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic.Timer
+namespace BusinessLogic.Timers
 {
     class Timer
     {
