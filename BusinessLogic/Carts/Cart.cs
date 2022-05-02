@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLogic.TimeTables;
 
-namespace BusinessLogic
+namespace BusinessLogic.Carts
 {
     public abstract class Cart
     {
