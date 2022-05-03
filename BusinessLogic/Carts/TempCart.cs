@@ -17,7 +17,7 @@ namespace Entities.Carts
 
         public override string ToString()
         {
-            return $"Temp Cart [{Id}] ClubId: {club.Id}";
+            return $"Temp Cart [{Id}] ClubId: {clubId}";
         }
     }
 }
