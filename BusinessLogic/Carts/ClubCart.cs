@@ -12,6 +12,8 @@ namespace Entities.Carts
     {
         private readonly Club club;
 
+        public ClubCart() : this(null, null) { }
+
         public ClubCart(Club club, ITimeTable table) : base(table)
         {
             this.club = club;

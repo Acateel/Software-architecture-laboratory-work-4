@@ -13,6 +13,8 @@ namespace Entities.Clubs
     {
         public string Location { get; private set; }
         public string Name { get; private set; }
+
+        public LocClub() : this(null, null, null) { }
         public LocClub(string name ,string location , ITimeTable table) : base(table)
         {
             Name = name;

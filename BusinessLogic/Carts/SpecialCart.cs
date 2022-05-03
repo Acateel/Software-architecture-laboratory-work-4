@@ -12,6 +12,8 @@ namespace Entities.Carts
     {
         private readonly string location;
 
+        public SpecialCart() : this(null, null) { }
+
         public SpecialCart(string location, ITimeTable time) : base(time)
         {
             this.location = location;

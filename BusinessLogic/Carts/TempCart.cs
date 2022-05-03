@@ -10,6 +10,7 @@ namespace Entities.Carts
 {
     class TempCart : ClubCart
     {
+        public TempCart() : this(null, null) { }
         public TempCart(Club club, ITimeTable table) : base(club, table)
         {
         }
