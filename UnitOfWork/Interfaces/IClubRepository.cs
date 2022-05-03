@@ -7,7 +7,7 @@ using Entities.Clubs;
 
 namespace UnitOfWork.Interfaces
 {
-    interface IClubRepository : IRepository<Club>
+    public interface IClubRepository : IRepository<Club>
     {
         IQueryable<Club> GetAll();
         Club GetClub(long id);

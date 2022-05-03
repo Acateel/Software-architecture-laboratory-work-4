@@ -7,7 +7,7 @@ using Entities.Carts;
 
 namespace UnitOfWork.Interfaces
 {
-    interface ICartRepository : IRepository<Cart>
+    public interface ICartRepository : IRepository<Cart>
     {
         IQueryable<Cart> GetAll();
         Cart GetCart(long id);

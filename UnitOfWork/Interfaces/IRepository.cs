@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitOfWork.Interfaces
 {
-    interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> where TEntity : class
     {
         TEntity Get(int id);
         void Insert(TEntity entity);
