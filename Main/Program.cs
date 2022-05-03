@@ -21,6 +21,9 @@ namespace Main
             Club club = new LocClub("Default", "DefaultCity", new TimeTable());
 
             context.Clubs.Add(club);
+            context.Carts.Add(club.BuyClubCart(new TimeTable()));
+
+            ShowContext(context);
         }
         static void ShowContext(ClubsContext context)
         {
