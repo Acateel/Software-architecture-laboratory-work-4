@@ -8,7 +8,7 @@ using Entities.Clubs;
 
 namespace Entities.Carts
 {
-    public abstract class Cart
+    public abstract class Cart : Entity
     {
         public ITimeTable Table { get; protected set; }
 

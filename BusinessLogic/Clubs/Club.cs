@@ -9,7 +9,7 @@ using Entities.Carts;
 
 namespace Entities.Clubs
 {
-    public abstract class Club
+    public abstract class Club : Entity
     {
         protected ITimeTable table;
 
