@@ -9,20 +9,30 @@ using Entities.Carts;
 using Entities;
 using System.Data.Entity;
 using UnitOfWork;
+using UnitOfWork.Interfaces;
+using UnitOfWork.UnitOfWorks.Interfaces;
+using UnitOfWork.UnitOfWorks.Services;
 
 namespace Main
 {
     class Program
     {
+        static IUnitOfWork unitOfWork = new UnitOfWork.UnitOfWorks.Services.UnitOfWork();
         static void Main(string[] args)
         {
-            using(var context = new ClubsContext())
+            ShowClubs();
+        }
+        static void DeleteClub(int id)
+        {
+            unitOfWork.GetClubRepository().Delete(id);
+            unitOfWork.Save();
+        }
+        static void ShowClubs()
+        {
+            Console.WriteLine("Clubs:");
+            foreach(var club in unitOfWork.GetClubRepository().GetAll())
             {
-                var quare = context.Clubs.AsQueryable<Club>();
-                foreach(var entity in quare)
-                {
-                    Console.WriteLine(entity.ToString());
-                }
+                Console.WriteLine(club.ToString());
             }
         }
     }
