@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLogic.TimeTables;
-using BusinessLogic.Clubs;
+using Entities.TimeTables;
+using Entities.Clubs;
 
-namespace BusinessLogic.Carts
+namespace Entities.Carts
 {
     public abstract class Cart
     {

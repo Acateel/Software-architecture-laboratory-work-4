@@ -1,13 +1,13 @@
-﻿using BusinessLogic.Carts;
-using BusinessLogic.TimeTables;
-using BusinessLogic.Timers;
+﻿using Entities.Carts;
+using Entities.TimeTables;
+using Entities.Timers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic.Clubs
+namespace Entities.Clubs
 {
     class LocClub : Club
     {

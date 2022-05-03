@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic.Clubs
+namespace Entities.Clubs
 {
     public class ClubException : Exception
     {
