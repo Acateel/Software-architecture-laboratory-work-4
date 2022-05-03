@@ -16,27 +16,22 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            ClubsContext context = new ClubsContext();
-
-            Club club = new LocClub("Default", "DefaultCity", new TimeTable());
-
-            context.Clubs.Add(club);
-            context.Carts.Add(club.BuyClubCart(new TimeTable()));
-
-            ShowContext(context);
-        }
-        static void ShowContext(ClubsContext context)
-        {
-            Console.WriteLine("Carts:");
-            foreach (var entity in context.Carts.Local)
+            using(var context = new ClubsContext())
             {
-                Console.WriteLine(entity.ToString());
+                Club club = new LocClub("SomeName", "City", new TimeTable());
+
+                context.Clubs.Add(club);
+
+                context.SaveChanges();
+
+                var quare = context.Clubs.AsQueryable<Club>();
+                foreach(var entity in quare)
+                {
+                    Console.WriteLine(entity.ToString());
+                }
             }
-            Console.WriteLine("Clubs:");
-            foreach (var entity in context.Clubs.Local)
-            {
-                Console.WriteLine(entity.ToString());
-            }
+
+
         }
     }
 }

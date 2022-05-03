@@ -59,6 +59,8 @@
     <Compile Include="Services\CartRepository.cs" />
     <Compile Include="Services\ClubRepository.cs" />
     <Compile Include="Services\Repository.cs" />
+    <Compile Include="UnitOfWorks\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWorks\Services\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,6 +72,7 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
