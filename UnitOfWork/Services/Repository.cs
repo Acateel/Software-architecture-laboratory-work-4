@@ -60,5 +60,14 @@ namespace UnitOfWork.Services
             db.Set<TEntity>().Attach(entity);
             db.Entry(entity).State = EntityState.Modified;
         }
+
+        public virtual void Delete(int id)
+        {
+            TEntity entity = db.Set<TEntity>().Find(id);
+            if(entity != null)
+            {
+                db.Set<TEntity>().Remove(entity);
+            }
+        }
     }
 }

@@ -18,20 +18,12 @@ namespace Main
         {
             using(var context = new ClubsContext())
             {
-                Club club = new LocClub("SomeName", "City", new TimeTable());
-
-                context.Clubs.Add(club);
-
-                context.SaveChanges();
-
                 var quare = context.Clubs.AsQueryable<Club>();
                 foreach(var entity in quare)
                 {
                     Console.WriteLine(entity.ToString());
                 }
             }
-
-
         }
     }
 }

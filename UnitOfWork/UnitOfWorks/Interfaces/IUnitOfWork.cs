@@ -13,6 +13,8 @@ namespace UnitOfWork.UnitOfWorks.Interfaces
         IClubRepository GetClubRepository();
         ICartRepository GetCartRepository();
 
+        void Save();
+
         List<T> ExecuteCustomQuery<T>(string command, params KeyValuePair<string, object>[] parameters);
 
         T Get<T>(int id) where T : Entity;

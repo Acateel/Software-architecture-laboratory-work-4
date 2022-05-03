@@ -33,6 +33,11 @@ namespace UnitOfWork.UnitOfWorks.Services
             return cartRepository ?? (cartRepository = new CartRepository(Db));
         }
 
+        public void Save()
+        {
+            Db.SaveChanges();
+        }
+
         public List<T> ExecuteCustomQuery<T>(string command, params KeyValuePair<string, object>[] parameters)
         {
             var _params = new object[parameters.Length];
