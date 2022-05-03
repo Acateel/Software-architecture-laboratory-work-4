@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Clubs
 {
-    class LocClub : Club
+    public class LocClub : Club
     {
         public string Location { get; private set; }
         public string Name { get; private set; }
