@@ -48,6 +48,7 @@
     <Compile Include="Clubs\LocClub.cs" />
     <Compile Include="Clubs\ClubException.cs" />
     <Compile Include="Clubs\Club.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Timers\ClasicTimer.cs" />
     <Compile Include="Timers\Timer.cs" />
     <Compile Include="TimeTables\TimeTable.cs" />
