@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClubsContext.cs" />
+    <Compile Include="Interfaces\IClubRepository.cs" />
+    <Compile Include="Interfaces\ICartRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
