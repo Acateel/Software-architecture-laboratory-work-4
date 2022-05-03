@@ -14,5 +14,10 @@ namespace Entities.Carts
         public TempCart(Club club, ITimeTable table) : base(club, table)
         {
         }
+
+        public override string ToString()
+        {
+            return $"Temp Cart [{Id}] ClubId: {club.Id}";
+        }
     }
 }

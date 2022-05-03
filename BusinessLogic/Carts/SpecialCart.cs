@@ -24,5 +24,10 @@ namespace Entities.Carts
             LocClub locClub = club as LocClub;
             return locClub.Location == location;
         }
+
+        public override string ToString()
+        {
+            return $"Special Cart [{Id}] location: {location}";
+        }
     }
 }

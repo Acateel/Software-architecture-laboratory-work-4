@@ -10,7 +10,7 @@ namespace Entities.Carts
 {
     class ClubCart : Cart
     {
-        private readonly Club club;
+        protected readonly Club club;
 
         public ClubCart() : this(null, null) { }
 
@@ -22,6 +22,11 @@ namespace Entities.Carts
         public override bool CheckCart(Club club)
         {
             return this.club.Equals(club);
+        }
+
+        public override string ToString()
+        {
+            return $"Club Cart [{Id}] ClubId: {club.Id}";
         }
     }
 }

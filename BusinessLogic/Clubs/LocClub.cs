@@ -57,5 +57,10 @@ namespace Entities.Clubs
             cart.Table.SetTemporary(time);
             return true;
         }
+
+        public override string ToString()
+        {
+            return $"Club {Name} [{Id}] Loc: {Location}";
+        }
     }
 }
