@@ -13,3 +13,5 @@ E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.pdb
 E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.dll.config
 E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.xml
+E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.xml
