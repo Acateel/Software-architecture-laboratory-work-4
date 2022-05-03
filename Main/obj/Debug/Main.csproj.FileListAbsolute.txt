@@ -8,3 +8,8 @@ E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.pdb
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.csproj.CopyComplete
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.exe
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.pdb
+E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.pdb
+E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.dll.config
+E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.xml
