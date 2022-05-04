@@ -1,6 +1,0 @@
-E:\CS\APPZ\lab_4\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
-E:\CS\APPZ\lab_4\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
-E:\CS\APPZ\lab_4\BusinessLogic\bin\Debug\BusinessLogic.dll
-E:\CS\APPZ\lab_4\BusinessLogic\bin\Debug\BusinessLogic.pdb
-E:\CS\APPZ\lab_4\BusinessLogic\obj\Debug\BusinessLogic.dll
-E:\CS\APPZ\lab_4\BusinessLogic\obj\Debug\BusinessLogic.pdb

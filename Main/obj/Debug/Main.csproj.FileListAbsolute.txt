@@ -3,8 +3,6 @@ E:\CS\APPZ\lab_4\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
 E:\CS\APPZ\lab_4\Main\bin\Debug\Main.exe.config
 E:\CS\APPZ\lab_4\Main\bin\Debug\Main.exe
 E:\CS\APPZ\lab_4\Main\bin\Debug\Main.pdb
-E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.dll
-E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.pdb
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.csproj.CopyComplete
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.exe
 E:\CS\APPZ\lab_4\Main\obj\Debug\Main.pdb
@@ -15,3 +13,5 @@ E:\CS\APPZ\lab_4\Main\bin\Debug\UnitOfWork.dll.config
 E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.xml
 E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.xml
+E:\CS\APPZ\lab_4\Main\bin\Debug\Entities.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\Entities.pdb
