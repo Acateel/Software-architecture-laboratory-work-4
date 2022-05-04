@@ -7,7 +7,7 @@ using Entities.Clubs;
 
 namespace BusinessLogic.Interfaces
 {
-    interface IClubsLogic
+    public interface IClubsLogic
     {
         IQueryable<Club> GetClubs();
         void SetClub(int id);

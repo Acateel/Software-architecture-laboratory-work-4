@@ -10,11 +10,11 @@ using BusinessLogic.Servises;
 
 namespace BusinessLogic
 {
-    class Logic
+    public class Logic
     {
         public Logic(IUnitOfWork unitOfWork)
         {
-            Club = new ClubLogic();
+            Club = new ClubLogic(unitOfWork.GetClubRepository(), unitOfWork.GetCartRepository());
             Clubs = new ClubsLogic(unitOfWork.GetClubRepository(), Club);
             Carts = new CartLogic(unitOfWork.GetCartRepository());
         }

@@ -9,7 +9,7 @@ using Entities.TimeTables;
 
 namespace BusinessLogic.Interfaces
 {
-    interface ICartLogic
+    public interface ICartLogic
     {
         IQueryable<Cart> GetCarts();
         ITimeTable GetTimeTable(int cartId);

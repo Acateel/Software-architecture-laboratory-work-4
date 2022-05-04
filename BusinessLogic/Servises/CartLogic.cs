@@ -11,7 +11,7 @@ using UnitOfWork.Interfaces;
 
 namespace BusinessLogic.Servises
 {
-    class CartLogic : ICartLogic
+    public class CartLogic : ICartLogic
     {
         private readonly ICartRepository repository;
 

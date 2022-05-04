@@ -11,7 +11,7 @@ using Entities.Clubs;
 
 namespace BusinessLogic.Servises
 {
-    class ClubsLogic : IClubsLogic
+    public class ClubsLogic : IClubsLogic
     {
         private readonly IClubRepository repository;
         private readonly IClubLogic clubLogic;

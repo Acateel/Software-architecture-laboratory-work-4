@@ -9,7 +9,7 @@ using Entities.TimeTables;
 
 namespace BusinessLogic.Interfaces
 {
-    interface IClubLogic
+    public interface IClubLogic
     {
         Club Club { get; set; }
         string GetClubInfo();
