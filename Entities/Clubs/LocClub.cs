@@ -24,7 +24,7 @@ namespace Entities.Clubs
         public override bool Visit(Cart cart)
         {
             int time = Timer.GetTime();
-            if (!table.IsTimeFree(time))
+            if (!Table.IsTimeFree(time))
             {
                 return false;
             }

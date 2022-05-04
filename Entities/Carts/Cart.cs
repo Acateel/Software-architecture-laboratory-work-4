@@ -10,7 +10,7 @@ namespace Entities.Carts
 {
     public abstract class Cart : Entity
     {
-        public ITimeTable Table { get; protected set; }
+        public ITimeTable Table { get; set; }
 
         protected Cart(ITimeTable table)
         {

@@ -45,10 +45,9 @@
     <Compile Include="Interfaces\IClubLogic.cs" />
     <Compile Include="Interfaces\ICartLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servises\CartLogic.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Servises\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a86b329f-5505-41cd-b3a4-611260d04ad9}</Project>

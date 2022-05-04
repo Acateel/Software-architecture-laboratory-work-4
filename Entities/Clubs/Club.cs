@@ -11,11 +11,11 @@ namespace Entities.Clubs
 {
     public abstract class Club : Entity
     {
-        protected ITimeTable table;
+        public ITimeTable Table { get; set; }
 
         protected Club(ITimeTable table)
         {
-            this.table = table;
+            this.Table = table;
         }
 
         public void Visit()
