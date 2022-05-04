@@ -14,10 +14,12 @@ namespace BusinessLogic.Servises
     class ClubsLogic : IClubsLogic
     {
         private readonly IClubRepository repository;
+        private readonly IClubLogic clubLogic;
 
-        public ClubsLogic(IClubRepository repository)
+        public ClubsLogic(IClubRepository repository, IClubLogic clubLogic)
         {
             this.repository = repository;
+            this.clubLogic = clubLogic;
         }
 
         public void CreateClub(Club club)
@@ -35,9 +37,9 @@ namespace BusinessLogic.Servises
             return repository.GetAll();
         }
 
-        public Club SetClub(int id)
+        public void SetClub(int id)
         {
-            throw new NotImplementedException();
+            clubLogic.Club = repository.Get(id);
         }
     }
 }

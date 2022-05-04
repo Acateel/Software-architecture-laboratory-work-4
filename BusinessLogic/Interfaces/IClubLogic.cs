@@ -11,6 +11,7 @@ namespace BusinessLogic.Interfaces
 {
     interface IClubLogic
     {
+        Club Club { get; set; }
         string GetClubInfo();
         void ChangeInfo(Club club);
         bool VisitClub();
