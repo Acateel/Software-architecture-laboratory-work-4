@@ -61,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{b1bb8fea-b973-4195-b6bd-79468a7a9222}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a86b329f-5505-41cd-b3a4-611260d04ad9}</Project>
       <Name>Entities</Name>

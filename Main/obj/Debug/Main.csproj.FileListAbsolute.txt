@@ -15,3 +15,5 @@ E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\EntityFramework.SqlServer.xml
 E:\CS\APPZ\lab_4\Main\bin\Debug\Entities.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\Entities.pdb
+E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.pdb

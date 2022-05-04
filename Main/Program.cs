@@ -12,27 +12,40 @@ using UnitOfWork;
 using UnitOfWork.Interfaces;
 using UnitOfWork.UnitOfWorks.Interfaces;
 using UnitOfWork.UnitOfWorks.Services;
+using BusinessLogic;
 
 namespace Main
 {
     class Program
     {
-        static IUnitOfWork unitOfWork = new UnitOfWork.UnitOfWorks.Services.UnitOfWork();
         static void Main(string[] args)
         {
-            ShowClubs();
+            IUnitOfWork unitOfWork = new UnitOfWork.UnitOfWorks.Services.UnitOfWork();
+            Logic logic = new Logic(unitOfWork);
+            TimeTable table = new TimeTable();
+            table.SetConsonant(10, 20);
+
+            logic.Clubs.CreateClub(new LocClub("Nox", "Rivne", table));
+            logic.Clubs.CreateClub(new LocClub("SportO", "Odesa", new TimeTable()));
+            logic.Clubs.CreateClub(new LocClub("ClubHundred", "Rivne", new TimeTable()));
+
+            logic.Clubs.SetClub(1);
+            logic.Club.BuyClubCart(table);
+            logic.Club.BuySpecialCart(new TimeTable());
+
+            ShowDb(logic);
         }
-        static void DeleteClub(int id)
-        {
-            unitOfWork.GetClubRepository().Delete(id);
-            unitOfWork.Save();
-        }
-        static void ShowClubs()
+        static void ShowDb(Logic logic)
         {
             Console.WriteLine("Clubs:");
-            foreach(var club in unitOfWork.GetClubRepository().GetAll())
+            foreach (var club in logic.Clubs.GetClubs())
             {
-                Console.WriteLine(club.ToString());
+                Console.WriteLine(club);
+            }
+            Console.WriteLine("Carts:");
+            foreach(var cart in logic.Carts.GetCarts())
+            {
+                Console.WriteLine(cart);
             }
         }
     }
