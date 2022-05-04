@@ -69,5 +69,10 @@ namespace UnitOfWork.Services
                 db.Set<TEntity>().Remove(entity);
             }
         }
+
+        public void Save()
+        {
+            Db.SaveChanges();
+        }
     }
 }

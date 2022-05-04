@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic.cs" />
     <Compile Include="Interfaces\IClubsLogic.cs" />
     <Compile Include="Interfaces\IClubLogic.cs" />
     <Compile Include="Interfaces\ICartLogic.cs" />

@@ -12,5 +12,6 @@ namespace UnitOfWork.Interfaces
         void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(int id);
+        void Save();
     }
 }
