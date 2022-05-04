@@ -25,6 +25,7 @@ namespace BusinessLogic.Servises
             Cart cart = repository.Get(cartId);
             cart.Table = timeTable;
             repository.Update(cart);
+            repository.Save();
         }
 
         public IQueryable<Cart> GetCarts()
@@ -41,6 +42,7 @@ namespace BusinessLogic.Servises
         public void RemoveCart(int cartId)
         {
             repository.Delete(cartId);
+            repository.Save();
         }
     }
 }

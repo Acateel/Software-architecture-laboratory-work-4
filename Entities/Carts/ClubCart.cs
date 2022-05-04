@@ -8,7 +8,7 @@ using Entities.TimeTables;
 
 namespace Entities.Carts
 {
-    class ClubCart : Cart
+    public class ClubCart : Cart
     {
         protected readonly Club club;
 

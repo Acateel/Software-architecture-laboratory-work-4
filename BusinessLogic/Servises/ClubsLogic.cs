@@ -25,11 +25,13 @@ namespace BusinessLogic.Servises
         public void CreateClub(Club club)
         {
             repository.Insert(club);
+            repository.Save();
         }
 
         public void DeleteClub(int id)
         {
             repository.Delete(id);
+            repository.Save();
         }
 
         public IQueryable<Club> GetClubs()

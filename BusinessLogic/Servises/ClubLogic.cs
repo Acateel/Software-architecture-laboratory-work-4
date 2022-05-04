@@ -13,21 +13,37 @@ namespace BusinessLogic.Servises
 {
     class ClubLogic : IClubLogic
     {
+        private readonly IClubRepository clubRepository;
+        private readonly ICartRepository cartRepository;
         public Club Club { get; set; }
+
+        public ClubLogic(IClubRepository clubRepository, ICartRepository cartRepository)
+        {
+            this.clubRepository = clubRepository;
+            this.cartRepository = cartRepository;
+        }
 
         public Cart BuyClubCart(ITimeTable timeTable)
         {
-            return Club.BuyClubCart(timeTable);
+            var cart = Club.BuyClubCart(timeTable);
+            cartRepository.Insert(cart);
+            cartRepository.Save();
+            return cart;
         }
 
         public Cart BuySpecialCart(ITimeTable timeTable)
         {
-            return Club.BuySpecialCart(timeTable);
+            var cart = Club.BuySpecialCart(timeTable);
+            cartRepository.Insert(cart);
+            cartRepository.Save();
+            return cart;
         }
 
         public void ChangeInfo(Club club)
         {
             Club = club;
+            clubRepository.Update(club);
+            clubRepository.Save();
         }
 
         public string GetClubInfo()
@@ -37,12 +53,21 @@ namespace BusinessLogic.Servises
 
         public Cart SingUp(int time)
         {
-            return Club.SingUp(time);
+            var cart = Club.SingUp(time);
+            cartRepository.Insert(cart);
+            cartRepository.Save();
+            return cart;
         }
 
         public bool SingUp(Cart cart, int time)
         {
-            return Club.SingUp(cart, time);
+            bool singing = Club.SingUp(cart, time);
+            if (singing)
+            {
+                cartRepository.Update(cart);
+                cartRepository.Save();
+            }
+            return singing;
         }
 
         public bool VisitClub()
@@ -53,7 +78,14 @@ namespace BusinessLogic.Servises
 
         public bool VisitClub(Cart cart)
         {
-            return Club.Visit(cart);
+            bool visit = Club.Visit(cart);
+            if((cart is TempCart) && visit)
+            {
+                cartRepository.Delete(cart.Id);
+                cartRepository.Save();
+            }
+            
+            return visit;
         }
     }
 }

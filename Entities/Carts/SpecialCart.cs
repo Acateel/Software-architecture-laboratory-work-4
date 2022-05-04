@@ -8,7 +8,7 @@ using Entities.TimeTables;
 
 namespace Entities.Carts
 {
-    class SpecialCart : Cart
+    public class SpecialCart : Cart
     {
         private readonly string location;
 
