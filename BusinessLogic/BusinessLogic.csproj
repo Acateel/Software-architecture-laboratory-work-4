@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\ICartLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servises\CartLogic.cs" />
+    <Compile Include="Servises\ClubLogic.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
