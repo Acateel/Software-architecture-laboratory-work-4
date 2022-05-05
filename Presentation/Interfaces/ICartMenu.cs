@@ -8,7 +8,8 @@ namespace Presentation.Interfaces
 {
     interface ICartMenu
     {
-        void Show();
+        void ShowMenu();
+        void Start();
 
         void GetCarts();
         void GetTimeTable();

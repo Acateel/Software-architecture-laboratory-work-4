@@ -13,7 +13,7 @@ using UnitOfWork.Interfaces;
 using UnitOfWork.UnitOfWorks.Interfaces;
 using UnitOfWork.UnitOfWorks.Services;
 using BusinessLogic;
-using Presentation.Servises;
+using Presentation;
 
 namespace Main
 {
@@ -24,10 +24,7 @@ namespace Main
             IUnitOfWork unitOfWork = new UnitOfWork.UnitOfWorks.Services.UnitOfWork();
             Logic logic = new Logic(unitOfWork);
 
-            ITimeTable timeTable = InputHelper.GetTimeTable();
-            
-
-            ShowDb(logic);
+            MainMenu.Start(logic);            
         }
         static void ShowDb(Logic logic)
         {

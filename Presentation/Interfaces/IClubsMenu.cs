@@ -9,7 +9,8 @@ namespace Presentation.Interfaces
 {
     interface IClubsMenu
     {
-        void Show();
+        void ShowMenu();
+        void Start();
         void GetClubs();
         void SetClub();
         void CreateClub();

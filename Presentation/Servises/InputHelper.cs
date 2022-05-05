@@ -106,7 +106,7 @@ namespace Presentation.Servises
                 try
                 {
                     number = Convert.ToInt32(Console.ReadLine());
-                    if(0 < number && number < 24)
+                    if(0 <= number && number < 24)
                     {
                         break;
                     }

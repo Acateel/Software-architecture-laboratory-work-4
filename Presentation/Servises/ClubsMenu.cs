@@ -24,40 +24,87 @@ namespace Presentation.Servises
 
         public void CartMenu()
         {
-            cartMenu.Show();
+            cartMenu.Start();
         }
 
         public void CreateClub()
         {
             Console.WriteLine("Create Club:");
 
-            string name = "";
+            string name = InputHelper.GetName();
 
-            string location = "";
+            string location = InputHelper.GetLocation();
 
-            TimeTable table = new TimeTable();
+            ITimeTable table = InputHelper.GetTimeTable();
 
             LocClub club = new LocClub(name, location, table);
+
+            logic.Clubs.CreateClub(club);
+
+            Console.WriteLine(club + " added");
         }
 
         public void DeleteClub()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Delete club id:");
+            int number = InputHelper.GetCommant();
+            logic.Clubs.DeleteClub(number);
         }
 
         public void GetClubs()
         {
-            throw new NotImplementedException();
+            foreach(var club in logic.Clubs.GetClubs())
+            {
+                Console.WriteLine(club);
+            }
         }
 
         public void SetClub()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Club id:");
+            int id = InputHelper.GetCommant();
+            logic.Clubs.SetClub(id);
+            clubMenu.Start();
         }
 
-        public void Show()
+        public void ShowMenu()
         {
-            throw new NotImplementedException();
+            ConsoleColor color = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("1 - CartMenu | 2 - CreateClub | 3 - DeleteClub | 4 - SetClub | 5 - Stop");
+            Console.ForegroundColor = color;
+        }
+
+        public void Start()
+        {
+            bool running = true;
+            while (running)
+            {
+                GetClubs();
+                ShowMenu();
+                int command = InputHelper.GetCommant();
+                switch (command)
+                {
+                    case 1:
+                        CartMenu();
+                        break;
+                    case 2:
+                        CreateClub();
+                        break;
+                    case 3:
+                        DeleteClub();
+                        break;
+                    case 4:
+                        SetClub();
+                        break;
+                    case 5:
+                        running = false;
+                        break;
+                    default:
+                        Console.WriteLine("Command not found");
+                        break;
+                }
+            }
         }
     }
 }
