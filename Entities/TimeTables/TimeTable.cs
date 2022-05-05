@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Carts;
+using Entities.Clubs;
 
 namespace Entities.TimeTables
 {
     public class TimeTable : ITimeTable
     {
         public TimeState[] Table { get; set; }
+
+        public int Club_Id { get; set; }
+        public Club Club { get; set; }
+
+        public int Cart_Id { get; set; }
+        public Cart Cart { get; set; }
 
         public TimeTable()
         {

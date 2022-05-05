@@ -21,6 +21,11 @@ namespace Entities.Carts
             {
                 this.Club_Id = club.Id;
             }
+            if (table != null)
+            {
+                table.Cart = this;
+                table.Cart_Id = this.Id;
+            }
         }
 
         public override bool CheckCart(Club club)
