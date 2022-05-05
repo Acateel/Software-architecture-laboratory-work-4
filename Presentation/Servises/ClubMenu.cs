@@ -24,14 +24,14 @@ namespace Presentation.Servises
         {
             var table = InputHelper.GetTimeTable();
             var cart = logic.Club.BuyClubCart(table);
-            Console.WriteLine(cart + "bought");
+            Console.WriteLine(cart + " bought");
         }
 
         public void BuySpecialCart()
         {
             var table = InputHelper.GetTimeTable();
             var cart = logic.Club.BuySpecialCart(table);
-            Console.WriteLine(cart + "bought");
+            Console.WriteLine(cart + " bought");
         }
 
         public void ChangeInfo()
@@ -74,14 +74,21 @@ namespace Presentation.Servises
 
         private void SingUpWithCart()
         {
-            Console.WriteLine("Write cart id");
-            int id = InputHelper.GetCommant();
-            var cart = logic.Carts.GetCart(id);
-            int time = InputHelper.GetTime();
-            logic.Club.SingUp(cart, time);
-            Console.WriteLine(cart);
-            InputHelper.ShowTimeTable(cart.Table);
-            Console.WriteLine("Sing up");
+            try
+            {
+                Console.WriteLine("Write cart id");
+                int id = InputHelper.GetCommant();
+                var cart = logic.Carts.GetCart(id);
+                int time = InputHelper.GetTime();
+                logic.Club.SingUp(cart, time);
+                Console.WriteLine(cart);
+                InputHelper.ShowTimeTable(cart.Table);
+                Console.WriteLine("Sing up");
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Cart with id was not found");
+            }
         }
 
         private void SingUpWithoutCart()
@@ -114,17 +121,26 @@ namespace Presentation.Servises
 
         private void VisitClubWithCart()
         {
-            Console.WriteLine("Write cart id");
-            int id = InputHelper.GetCommant();
-            var cart = logic.Carts.GetCart(id);
-            bool visit = logic.Club.VisitClub(cart);
-            if (visit)
+            try
             {
-                Console.WriteLine("Wisit true");
+                Console.WriteLine("Write cart id");
+                int id = InputHelper.GetCommant();
+                var cart = logic.Carts.GetCart(id);
+                bool visit = logic.Club.VisitClub(cart);
+                if (visit)
+                {
+                    Console.WriteLine("Wisit true");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Wisit false");
+                    return;
+                }
             }
-            else
+            catch (InvalidOperationException)
             {
-                Console.WriteLine("Wisit false");
+                Console.WriteLine("Cart with id was not found");
             }
         }
 

@@ -21,11 +21,18 @@ namespace Presentation.Servises
 
         public void ChangeTimeTable()
         {
-            Console.WriteLine("Write Cart Id");
-            int id = InputHelper.GetCommant();
-            var table = logic.Carts.GetTimeTable(id);
-            table = InputHelper.SetTimeTable(table);
-            logic.Carts.ChangeTimeTable(id, table);
+            try
+            {
+                Console.WriteLine("Write Cart Id");
+                int id = InputHelper.GetCommant();
+                var table = logic.Carts.GetTimeTable(id);
+                table = InputHelper.SetTimeTable(table);
+                logic.Carts.ChangeTimeTable(id, table);
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Cart with id was not found");
+            }
         }
 
         public void GetCarts()
@@ -38,17 +45,31 @@ namespace Presentation.Servises
 
         public void GetTimeTable()
         {
-            Console.WriteLine("Write cart id:");
-            int id = InputHelper.GetCommant();
-            InputHelper.ShowTimeTable(logic.Carts.GetTimeTable(id));
+            try
+            {
+                Console.WriteLine("Write cart id:");
+                int id = InputHelper.GetCommant();
+                InputHelper.ShowTimeTable(logic.Carts.GetTimeTable(id));
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Cart with id was not found");
+            }
         }
 
         public void RemoveCart()
         {
-            Console.WriteLine("Write cart id:");
-            int id = InputHelper.GetCommant();
-            logic.Carts.RemoveCart(id);
-            Console.WriteLine("cart deleted");
+            try
+            {
+                Console.WriteLine("Write cart id:");
+                int id = InputHelper.GetCommant();
+                logic.Carts.RemoveCart(id);
+                Console.WriteLine("cart deleted");
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Cart with id was not found");
+            }
         }
 
         public void ShowMenu()

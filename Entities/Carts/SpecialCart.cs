@@ -10,24 +10,24 @@ namespace Entities.Carts
 {
     public class SpecialCart : Cart
     {
-        private readonly string location;
+        
 
         public SpecialCart() : this(null, null) { }
 
         public SpecialCart(string location, ITimeTable time) : base(time)
         {
-            this.location = location;
+            this.Location = location;
         }
 
         public override bool CheckCart(Club club)
         {
             LocClub locClub = club as LocClub;
-            return locClub.Location == location;
+            return locClub.Location == Location;
         }
 
         public override string ToString()
         {
-            return $"Special Cart [{Id}] location: {location}";
+            return $"Special Cart [{Id}] location: {Location}";
         }
     }
 }

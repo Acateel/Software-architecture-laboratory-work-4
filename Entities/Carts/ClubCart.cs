@@ -10,23 +10,24 @@ namespace Entities.Carts
 {
     public class ClubCart : Cart
     {
-        protected readonly Club club;
+        
 
         public ClubCart() : this(null, null) { }
 
         public ClubCart(Club club, ITimeTable table) : base(table)
         {
-            this.club = club;
+            this.Club = club;
+            this.Club_Id = club.Id;
         }
 
         public override bool CheckCart(Club club)
         {
-            return this.club.Equals(club);
+            return this.Club.Equals(club);
         }
 
         public override string ToString()
         {
-            return $"Club Cart [{Id}] ClubId: {club.Id}";
+            return $"Club Cart [{Id}] ClubId: {Club.Id}";
         }
     }
 }
