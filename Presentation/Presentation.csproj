@@ -47,6 +47,7 @@
     <Compile Include="MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servises\CartMenu.cs" />
+    <Compile Include="Servises\ClubMenu.cs" />
     <Compile Include="Servises\InputHelper.cs" />
     <Compile Include="Servises\ClubsMenu.cs" />
   </ItemGroup>

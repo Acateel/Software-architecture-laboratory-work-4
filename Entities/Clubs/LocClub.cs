@@ -11,8 +11,8 @@ namespace Entities.Clubs
 {
     public class LocClub : Club
     {
-        public string Location { get; private set; }
-        public string Name { get; private set; }
+        public string Location { get; set; }
+        public string Name { get; set; }
 
         public LocClub() : this(null, null, null) { }
         public LocClub(string name ,string location , ITimeTable table) : base(table)

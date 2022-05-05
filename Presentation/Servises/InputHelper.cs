@@ -159,5 +159,22 @@ namespace Presentation.Servises
             Console.WriteLine("1 - SetFree | 2 - SetConsonant | 3 - SetTemp | 4 - Stop");
             Console.ForegroundColor = color;
         }
+
+        public static bool GetYesOrNo()
+        {
+            while (true)
+            {
+                string line = Console.ReadLine();
+                if (line == "y" || line == "yes")
+                {
+                    return true;
+                }
+                if (line == "n" || line == "no")
+                {
+                    return false;
+                }
+                Console.WriteLine("Non format");
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace Presentation.Servises
         {
             this.logic = logic;
             cartMenu = new CartMenu(logic);
+            clubMenu = new ClubMenu(logic);
         }
 
         public void CartMenu()

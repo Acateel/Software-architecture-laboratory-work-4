@@ -33,6 +33,11 @@ namespace BusinessLogic.Servises
             return repository.GetAll();
         }
 
+        public Cart GetCart(int cartId)
+        {
+            return repository.Get(cartId);
+        }
+
         public ITimeTable GetTimeTable(int cartId)
         {
             Cart cart = repository.Get(cartId);

@@ -14,6 +14,8 @@ namespace BusinessLogic.Interfaces
         IQueryable<Cart> GetCarts();
         ITimeTable GetTimeTable(int cartId);
 
+        Cart GetCart(int cartId);
+
         void ChangeTimeTable(int cartId, ITimeTable timeTable);
 
         void RemoveCart(int cartId);
