@@ -22,8 +22,8 @@ namespace UnitOfWork
 
         static ClubsContext()
         {
-            //Database.SetInitializer<ClubsContext>(new CreateDatabaseIfNotExists<ClubsContext>());
-            Database.SetInitializer<ClubsContext>(new DropCreateDatabaseAlways<ClubsContext>());
+            Database.SetInitializer<ClubsContext>(new CreateDatabaseIfNotExists<ClubsContext>());
+            //Database.SetInitializer<ClubsContext>(new DropCreateDatabaseAlways<ClubsContext>());
         }
 
         public ObjectResult<T> ExecuteStoreQuery<T>(string commandText, params object[] paramenters)

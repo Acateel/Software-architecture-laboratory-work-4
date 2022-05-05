@@ -26,18 +26,5 @@ namespace Main
 
             MainMenu.Start(logic);            
         }
-        static void ShowDb(Logic logic)
-        {
-            Console.WriteLine("Clubs:");
-            foreach (var club in logic.Clubs.GetClubs())
-            {
-                Console.WriteLine(club);
-            }
-            Console.WriteLine("Carts:");
-            foreach(var cart in logic.Carts.GetCarts())
-            {
-                Console.WriteLine(cart);
-            }
-        }
     }
 }

@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Timers
 {
-    class ClasicTimer : Timer
+    public class ClasicTimer : Timer
     {
-        public ClasicTimer(int _time)
-        {
-            time = _time;
-        }
 
-        public void setTime(int newTime)
+        public static void setTime(int newTime)
         {
             time = newTime;
         }

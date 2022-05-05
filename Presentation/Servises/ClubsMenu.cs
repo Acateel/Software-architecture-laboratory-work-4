@@ -68,11 +68,18 @@ namespace Presentation.Servises
             clubMenu.Start();
         }
 
+        public void SetTime()
+        {
+            int time = InputHelper.GetTime();
+            Entities.Timers.ClasicTimer.setTime(time);
+        }
+
         public void ShowMenu()
         {
             ConsoleColor color = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("1 - CartMenu | 2 - CreateClub | 3 - DeleteClub | 4 - SetClub | 5 - Stop");
+            Console.WriteLine("Time: " + Entities.Timers.Timer.GetTime());
+            Console.WriteLine("1 - CartMenu | 2 - CreateClub | 3 - DeleteClub | 4 - SetClub | 5 - SetTime | 6 - Stop");
             Console.ForegroundColor = color;
         }
 
@@ -99,6 +106,9 @@ namespace Presentation.Servises
                         SetClub();
                         break;
                     case 5:
+                        SetTime();
+                        break;
+                    case 6:
                         running = false;
                         break;
                     default:

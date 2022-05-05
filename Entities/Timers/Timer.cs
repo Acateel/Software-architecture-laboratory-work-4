@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Timers
 {
-    class Timer
+    public class Timer
     {
-        protected static int time = 0;
+        protected static int time = DateTime.Now.Hour;
 
         public static int GetTime()
         {
