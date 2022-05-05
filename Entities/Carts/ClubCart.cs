@@ -17,7 +17,10 @@ namespace Entities.Carts
         public ClubCart(Club club, ITimeTable table) : base(table)
         {
             this.Club = club;
-            this.Club_Id = club.Id;
+            if (club != null)
+            {
+                this.Club_Id = club.Id;
+            }
         }
 
         public override bool CheckCart(Club club)

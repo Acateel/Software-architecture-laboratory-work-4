@@ -8,6 +8,7 @@ namespace Entities.TimeTables
 {
     public interface ITimeTable
     {
+        TimeState[] Table { get; set; }
         bool IsTimeFree(int time);
         bool IsTimeConstant(int time);
         bool IsTimeTemporary(int time);
@@ -18,7 +19,7 @@ namespace Entities.TimeTables
         void SetTemporary(int time);
         void SetTemporary(int beginTime, int endTime);
     }
-    enum TimeState
+    public enum TimeState
     {
         Free,
         Constant,

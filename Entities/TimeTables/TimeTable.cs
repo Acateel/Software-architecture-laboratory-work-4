@@ -8,35 +8,35 @@ namespace Entities.TimeTables
 {
     public class TimeTable : ITimeTable
     {
-        private readonly TimeState[] table;
+        public TimeState[] Table { get; set; }
 
         public TimeTable()
         {
-            table = new TimeState[24];
-            for(int i = 0; i<table.Length; i++)
+            Table = new TimeState[24];
+            for(int i = 0; i<Table.Length; i++)
             {
-                table[i] = TimeState.Free;
+                Table[i] = TimeState.Free;
             }
         }
 
         public bool IsTimeFree(int time)
         {
-            return table[time] == TimeState.Free;
+            return Table[time] == TimeState.Free;
         }
 
         public bool IsTimeConstant(int time)
         {
-            return table[time] == TimeState.Constant;
+            return Table[time] == TimeState.Constant;
         }
 
         public bool IsTimeTemporary(int time)
         {
-            return table[time] == TimeState.Temporary;
+            return Table[time] == TimeState.Temporary;
         }
 
         public void SetFree(int time)
         {
-            table[time] = TimeState.Free;
+            Table[time] = TimeState.Free;
         }
 
         public void SetFree(int beginTime, int endTime)
@@ -49,7 +49,7 @@ namespace Entities.TimeTables
         
         public void SetConsonant(int time)
         {
-            table[time] = TimeState.Constant;
+            Table[time] = TimeState.Constant;
         }
 
         public void SetConsonant(int beginTime, int endTime)
@@ -62,7 +62,7 @@ namespace Entities.TimeTables
 
         public void SetTemporary(int time)
         {
-            table[time] = TimeState.Temporary;
+            Table[time] = TimeState.Temporary;
         }
 
         public void SetTemporary(int beginTime, int endTime)
