@@ -46,10 +46,9 @@
     <Compile Include="Interfaces\ICartMenu.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servises\ClubsMenu.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Servises\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{b1bb8fea-b973-4195-b6bd-79468a7a9222}</Project>

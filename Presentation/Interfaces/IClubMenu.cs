@@ -8,6 +8,7 @@ namespace Presentation.Interfaces
 {
     interface IClubMenu
     {
+        void Show();
         void GetClubInfo();
         void ChangeInfo();
         void VisitClub();
