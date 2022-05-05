@@ -69,6 +69,10 @@
       <Project>{a86b329f-5505-41cd-b3a4-611260d04ad9}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Presentation\Presentation.csproj">
+      <Project>{7cb1dbef-b307-4b4e-b720-f3a91f6a0973}</Project>
+      <Name>Presentation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj">
       <Project>{cbe6ef8d-51e0-4345-9e1f-6f348f07a683}</Project>
       <Name>UnitOfWork</Name>

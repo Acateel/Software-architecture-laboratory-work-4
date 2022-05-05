@@ -25,13 +25,7 @@ namespace Main
             TimeTable table = new TimeTable();
             table.SetConsonant(10, 20);
 
-            logic.Clubs.CreateClub(new LocClub("Nox", "Rivne", table));
-            logic.Clubs.CreateClub(new LocClub("SportO", "Odesa", new TimeTable()));
-            logic.Clubs.CreateClub(new LocClub("ClubHundred", "Rivne", new TimeTable()));
-
-            logic.Clubs.SetClub(1);
-            logic.Club.BuyClubCart(table);
-            logic.Club.BuySpecialCart(new TimeTable());
+            
 
             ShowDb(logic);
         }
