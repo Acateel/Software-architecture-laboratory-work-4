@@ -20,7 +20,7 @@ namespace BusinessLogic.Servises
             this.repository = repository;
         }
 
-        public void ChangeTimeTable(int cartId, TimeTable timeTable)
+        public void ChangeTimeTable(int cartId, ITimeTable timeTable)
         {
             Cart cart = repository.Get(cartId);
             cart.Table = timeTable;

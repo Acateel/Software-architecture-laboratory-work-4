@@ -13,13 +13,13 @@ namespace Presentation.Servises
     class ClubsMenu : IClubsMenu
     {
         private readonly Logic logic;
-        ICartMenu cartMenu;
-        IClubMenu clubMenu;
+        private readonly ICartMenu cartMenu;
+        private readonly IClubMenu clubMenu;
 
         public ClubsMenu(Logic logic)
         {
             this.logic = logic;
-            // initialise sum menu
+            cartMenu = new CartMenu(logic);
         }
 
         public void CartMenu()
