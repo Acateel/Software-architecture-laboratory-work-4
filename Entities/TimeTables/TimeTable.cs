@@ -8,7 +8,7 @@ using Entities.Clubs;
 
 namespace Entities.TimeTables
 {
-    public class TimeTable : ITimeTable
+    public class TimeTable : Entity
     {
         public TimeState[] Table { get; set; }
 
@@ -21,7 +21,7 @@ namespace Entities.TimeTables
         public TimeTable()
         {
             Table = new TimeState[24];
-            for(int i = 0; i<Table.Length; i++)
+            for (int i = 0; i < Table.Length; i++)
             {
                 Table[i] = TimeState.Free;
             }
@@ -49,12 +49,12 @@ namespace Entities.TimeTables
 
         public void SetFree(int beginTime, int endTime)
         {
-            for(int time = beginTime; time <= endTime; time++)
+            for (int time = beginTime; time <= endTime; time++)
             {
                 SetFree(time);
             }
         }
-        
+
         public void SetConsonant(int time)
         {
             Table[time] = TimeState.Constant;
@@ -80,7 +80,11 @@ namespace Entities.TimeTables
                 SetTemporary(time);
             }
         }
-
     }
-    
+    public enum TimeState
+    {
+        Free,
+        Constant,
+        Temporary
+    }
 }

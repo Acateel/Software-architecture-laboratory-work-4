@@ -10,12 +10,12 @@ namespace Entities.Carts
 {
     public abstract class Cart : Entity
     {
-        public ITimeTable Table { get; set; }
+        public TimeTable Table { get; set; }
         public int Club_Id { get; set; }
         public Club Club { get; set; }
         public string Location { get; set; }
 
-        protected Cart(ITimeTable table)
+        protected Cart(TimeTable table)
         {
             this.Table = table;
         }

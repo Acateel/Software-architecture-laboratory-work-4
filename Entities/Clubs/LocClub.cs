@@ -15,7 +15,7 @@ namespace Entities.Clubs
         public string Name { get; set; }
 
         public LocClub() : this(null, null, null) { }
-        public LocClub(string name ,string location , ITimeTable table) : base(table)
+        public LocClub(string name ,string location , TimeTable table) : base(table)
         {
             Name = name;
             Location = location;
@@ -36,19 +36,19 @@ namespace Entities.Clubs
             return cart.VisitClub(this, time);
         }
 
-        public override Cart BuyClubCart(ITimeTable timeTable)
+        public override Cart BuyClubCart(TimeTable timeTable)
         {
             return new ClubCart(this, timeTable);
         }
 
-        public override Cart BuySpecialCart(ITimeTable timeTable)
+        public override Cart BuySpecialCart(TimeTable timeTable)
         {
             return new SpecialCart(Location, timeTable);
         }
 
         public override Cart SingUp(int time)
         {
-            ITimeTable timeTable = new TimeTable();
+            TimeTable timeTable = new TimeTable();
             timeTable.SetTemporary(time);
             return new TempCart(this, timeTable);
         }

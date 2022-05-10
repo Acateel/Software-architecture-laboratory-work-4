@@ -14,7 +14,7 @@ namespace Entities.Carts
 
         public ClubCart() : this(null, null) { }
 
-        public ClubCart(Club club, ITimeTable table) : base(table)
+        public ClubCart(Club club, TimeTable table) : base(table)
         {
             this.Club = club;
             if (club != null)

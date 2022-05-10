@@ -52,7 +52,6 @@
     <Compile Include="Timers\ClasicTimer.cs" />
     <Compile Include="Timers\Timer.cs" />
     <Compile Include="TimeTables\TimeTable.cs" />
-    <Compile Include="TimeTables\ITimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

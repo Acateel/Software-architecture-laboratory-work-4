@@ -14,7 +14,7 @@ namespace Entities.Carts
 
         public SpecialCart() : this(null, null) { }
 
-        public SpecialCart(string location, ITimeTable time) : base(time)
+        public SpecialCart(string location, TimeTable time) : base(time)
         {
             this.Location = location;
             if (Table != null)
