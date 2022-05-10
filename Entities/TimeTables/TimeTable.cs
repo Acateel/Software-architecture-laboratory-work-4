@@ -10,35 +10,31 @@ namespace Entities.TimeTables
 {
     public class TimeTable : Entity
     {
-        public TimeState[] Table { get; set; }
+        public String Table { get; set; }
 
         public TimeTable()
         {
-            Table = new TimeState[24];
-            for (int i = 0; i < Table.Length; i++)
-            {
-                Table[i] = TimeState.Free;
-            }
+            Table = "FFFFFFFFFFFFFFFFFFFFFFFF";
         }
 
         public bool IsTimeFree(int time)
         {
-            return Table[time] == TimeState.Free;
+            return Table[time] == 'F';
         }
 
         public bool IsTimeConstant(int time)
         {
-            return Table[time] == TimeState.Constant;
+            return Table[time] == 'C';
         }
 
         public bool IsTimeTemporary(int time)
         {
-            return Table[time] == TimeState.Temporary;
+            return Table[time] == 'T';
         }
 
         public void SetFree(int time)
         {
-            Table[time] = TimeState.Free;
+            SetStatus(time, 'F');
         }
 
         public void SetFree(int beginTime, int endTime)
@@ -51,7 +47,7 @@ namespace Entities.TimeTables
 
         public void SetConsonant(int time)
         {
-            Table[time] = TimeState.Constant;
+            SetStatus(time, 'C');
         }
 
         public void SetConsonant(int beginTime, int endTime)
@@ -64,7 +60,7 @@ namespace Entities.TimeTables
 
         public void SetTemporary(int time)
         {
-            Table[time] = TimeState.Temporary;
+            SetStatus(time, 'T');
         }
 
         public void SetTemporary(int beginTime, int endTime)
@@ -74,11 +70,22 @@ namespace Entities.TimeTables
                 SetTemporary(time);
             }
         }
-    }
-    public enum TimeState
-    {
-        Free,
-        Constant,
-        Temporary
+
+        private void SetStatus(int time, char status)
+        {
+            String newTable = "";
+            for (int i = 0; i < Table.Length; i++)
+            {
+                if (i == time)
+                {
+                    newTable += status;
+                }
+                else
+                {
+                    newTable += Table[i];
+                }
+            }
+            Table = newTable;
+        }
     }
 }

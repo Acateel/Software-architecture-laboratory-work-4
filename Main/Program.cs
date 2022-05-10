@@ -30,7 +30,7 @@ namespace Main
         static void Testing()
         {
             ClubsContext context = new ClubsContext();
-            //GetTestData(context);
+            GetTestData(context);
 
             foreach(var club in context.Clubs.Include("Table"))
             {
