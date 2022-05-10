@@ -8,6 +8,7 @@ using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using Entities.Clubs;
 using Entities.Carts;
+using Entities.TimeTables;
 
 namespace UnitOfWork
 {
@@ -19,6 +20,8 @@ namespace UnitOfWork
 
         public DbSet<Club> Clubs { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<TimeTable> TimeTables { get; set; }
+        
 
         static ClubsContext()
         {
