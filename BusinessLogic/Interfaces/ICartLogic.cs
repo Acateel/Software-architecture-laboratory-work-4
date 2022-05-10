@@ -12,11 +12,11 @@ namespace BusinessLogic.Interfaces
     public interface ICartLogic
     {
         IQueryable<Cart> GetCarts();
-        ITimeTable GetTimeTable(int cartId);
+        TimeTable GetTimeTable(int cartId);
 
         Cart GetCart(int cartId);
 
-        void ChangeTimeTable(int cartId, ITimeTable timeTable);
+        void ChangeTimeTable(int cartId, TimeTable timeTable);
 
         void RemoveCart(int cartId);
     }

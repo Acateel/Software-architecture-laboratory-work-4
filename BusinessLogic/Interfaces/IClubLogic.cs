@@ -17,8 +17,8 @@ namespace BusinessLogic.Interfaces
         bool VisitClub();
         bool VisitClub(Cart cart);
 
-        Cart BuyClubCart(ITimeTable timeTable);
-        Cart BuySpecialCart(ITimeTable timeTable);
+        Cart BuyClubCart(TimeTable timeTable);
+        Cart BuySpecialCart(TimeTable timeTable);
 
         Cart SingUp(int time);
         bool SingUp(Cart cart, int time);

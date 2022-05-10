@@ -20,7 +20,7 @@ namespace BusinessLogic.Servises
             this.repository = repository;
         }
 
-        public void ChangeTimeTable(int cartId, ITimeTable timeTable)
+        public void ChangeTimeTable(int cartId, TimeTable timeTable)
         {
             Cart cart = repository.Get(cartId);
             cart.Table = timeTable;
@@ -38,7 +38,7 @@ namespace BusinessLogic.Servises
             return repository.Get(cartId);
         }
 
-        public ITimeTable GetTimeTable(int cartId)
+        public TimeTable GetTimeTable(int cartId)
         {
             Cart cart = repository.Get(cartId);
             return cart.Table;

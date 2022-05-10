@@ -23,7 +23,7 @@ namespace BusinessLogic.Servises
             this.cartRepository = cartRepository;
         }
 
-        public Cart BuyClubCart(ITimeTable timeTable)
+        public Cart BuyClubCart(TimeTable timeTable)
         {
             var cart = Club.BuyClubCart(timeTable);
             cartRepository.Insert(cart);
@@ -31,7 +31,7 @@ namespace BusinessLogic.Servises
             return cart;
         }
 
-        public Cart BuySpecialCart(ITimeTable timeTable)
+        public Cart BuySpecialCart(TimeTable timeTable)
         {
             var cart = Club.BuySpecialCart(timeTable);
             cartRepository.Insert(cart);
