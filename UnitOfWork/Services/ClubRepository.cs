@@ -16,7 +16,7 @@ namespace UnitOfWork.Services
         {
             try
             {
-                return Db.Clubs;
+                return Db.Clubs.Include("Table");
             }
             catch (Exception ex)
             {
@@ -29,7 +29,7 @@ namespace UnitOfWork.Services
         {
             try
             {
-                return Db.Clubs.FirstOrDefault(c => c.Id == id);
+                return Db.Clubs.Include("Table").FirstOrDefault(c => c.Id == id);
             }
             catch (Exception ex)
             {
