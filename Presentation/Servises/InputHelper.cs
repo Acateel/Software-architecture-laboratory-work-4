@@ -32,14 +32,14 @@ namespace Presentation.Servises
             return location;
         }
 
-        public static ITimeTable GetTimeTable()
+        public static TimeTable GetTimeTable()
         {
-            ITimeTable timeTable = new TimeTable();
+            TimeTable timeTable = new TimeTable();
             timeTable = SetTimeTable(timeTable);
             return timeTable;
         }
 
-        public static void ShowTimeTable(ITimeTable table)
+        public static void ShowTimeTable(TimeTable table)
         {
             Console.WriteLine("Time table");
             int count = 0;
@@ -66,7 +66,7 @@ namespace Presentation.Servises
             }
         }
 
-        public static ITimeTable SetTimeTable(ITimeTable table)
+        public static TimeTable SetTimeTable(TimeTable table)
         {
             bool status = true;
             while (status)

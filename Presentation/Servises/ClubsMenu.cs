@@ -36,7 +36,7 @@ namespace Presentation.Servises
 
             string location = InputHelper.GetLocation();
 
-            ITimeTable table = InputHelper.GetTimeTable();
+            TimeTable table = InputHelper.GetTimeTable();
 
             LocClub club = new LocClub(name, location, table);
 
