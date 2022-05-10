@@ -51,7 +51,9 @@
     <Compile Include="Servises\InputHelper.cs" />
     <Compile Include="Servises\ClubsMenu.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="PLDiagram.cd" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{b1bb8fea-b973-4195-b6bd-79468a7a9222}</Project>

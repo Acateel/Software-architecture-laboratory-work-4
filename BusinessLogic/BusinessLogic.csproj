@@ -50,7 +50,9 @@
     <Compile Include="Servises\ClubsLogic.cs" />
     <Compile Include="Servises\ClubLogic.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="BLLDiagram.cd" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a86b329f-5505-41cd-b3a4-611260d04ad9}</Project>

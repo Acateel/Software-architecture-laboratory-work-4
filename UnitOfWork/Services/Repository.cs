@@ -30,8 +30,7 @@ namespace UnitOfWork.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("db.Set<{2}>().Find({0}) threw exception: {1}", id, ex, typeof(TEntity).Name);
-                throw;
+                throw new InvalidOperationException(string.Format("{0} with ID={1} was not found in the DB", typeof(TEntity).Name, id));
             }
 
             if (entity == null)
@@ -69,7 +68,6 @@ namespace UnitOfWork.Services
                 db.Set<TEntity>().Remove(entity);
             }
         }
-
         public void Save()
         {
             Db.SaveChanges();
