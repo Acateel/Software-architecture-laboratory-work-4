@@ -12,12 +12,6 @@ namespace Entities.TimeTables
     {
         public TimeState[] Table { get; set; }
 
-        public int? Club_Id { get; set; }
-        public Club Club { get; set; }
-
-        public int? Cart_Id { get; set; }
-        public Cart Cart { get; set; }
-
         public TimeTable()
         {
             Table = new TimeState[24];

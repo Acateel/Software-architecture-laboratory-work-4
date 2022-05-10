@@ -10,6 +10,7 @@ namespace Entities.Carts
 {
     public abstract class Cart : Entity
     {
+        public int Table_Id { get; set; }
         public TimeTable Table { get; set; }
         public int Club_Id { get; set; }
         public Club Club { get; set; }
@@ -18,6 +19,10 @@ namespace Entities.Carts
         protected Cart(TimeTable table)
         {
             this.Table = table;
+            if (Table != null)
+            {
+                this.Table_Id = Table.Id;
+            }
         }
 
         public abstract bool CheckCart(Club club);

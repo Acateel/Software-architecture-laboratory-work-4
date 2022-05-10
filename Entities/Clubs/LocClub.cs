@@ -19,11 +19,6 @@ namespace Entities.Clubs
         {
             Name = name;
             Location = location;
-            if (table != null)
-            {
-                Table.Club = this;
-                Table.Club_Id = this.Id;
-            }
         }
 
         public override bool Visit(Cart cart)

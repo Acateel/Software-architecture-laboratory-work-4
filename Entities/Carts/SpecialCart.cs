@@ -17,11 +17,6 @@ namespace Entities.Carts
         public SpecialCart(string location, TimeTable time) : base(time)
         {
             this.Location = location;
-            if (Table != null)
-            {
-                Table.Cart = this;
-                Table.Cart_Id = this.Id;
-            }
         }
 
         public override bool CheckCart(Club club)
