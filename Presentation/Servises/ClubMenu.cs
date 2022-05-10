@@ -58,6 +58,11 @@ namespace Presentation.Servises
             Console.WriteLine(logic.Club.GetClubInfo());
         }
 
+        public void GetTable()
+        {
+            InputHelper.ShowTimeTable(logic.Club.Club.Table);
+        }
+
         public void SingUp()
         {
             Console.WriteLine("With cart?(y/n)");
@@ -148,7 +153,7 @@ namespace Presentation.Servises
         {
             ConsoleColor color = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("1 - ChangeInfo | 2 - BuyClubCart | 3 - BuySpecialCart | 4 - SingUp | 5 - VisitClub | 6 - Stop");
+            Console.WriteLine("1 - ChangeInfo | 2 - BuyClubCart | 3 - BuySpecialCart | \n4 - SingUp | 5 - VisitClub | 6 - GetTable | 7 - Stop");
             Console.ForegroundColor = color;
         }
 
@@ -178,6 +183,9 @@ namespace Presentation.Servises
                         VisitClub();
                         break;
                     case 6:
+                        GetTable();
+                        break;
+                    case 7:
                         running = false;
                         break;
                     default:
