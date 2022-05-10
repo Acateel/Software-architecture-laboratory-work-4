@@ -12,10 +12,10 @@ namespace Entities.TimeTables
     {
         TimeState[] Table { get; set; }
 
-        int Club_Id { get; set; }
+        int? Club_Id { get; set; }
         Club Club { get; set; }
 
-        int Cart_Id { get; set; }
+        int? Cart_Id { get; set; }
         Cart Cart { get; set; }
 
         bool IsTimeFree(int time);
