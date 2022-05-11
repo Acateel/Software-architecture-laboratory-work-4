@@ -67,20 +67,19 @@ namespace ClubsAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //// POST: api/Clubs
-        //[ResponseType(typeof(Club))]
-        //public IHttpActionResult PostClub(Club club)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // POST: api/Clubs
+        [ResponseType(typeof(ClubModel))]
+        public IHttpActionResult PostClub(ClubModel club)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    db.Clubs.Add(club);
-        //    db.SaveChanges();
+            logic.Clubs.CreateClub(ClubsParser.GetClub(club));
 
-        //    return CreatedAtRoute("DefaultApi", new { id = club.Id }, club);
-        //}
+            return CreatedAtRoute("DefaultApi", new { id = club.Id }, club);
+        }
 
         //// DELETE: api/Clubs/5
         //[ResponseType(typeof(Club))]
@@ -96,20 +95,6 @@ namespace ClubsAPI.Controllers
         //    db.SaveChanges();
 
         //    return Ok(club);
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
-
-        //private bool ClubExists(int id)
-        //{
-        //    return db.Clubs.Count(e => e.Id == id) > 0;
         //}
     }
 }
