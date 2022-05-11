@@ -10,115 +10,121 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Entities.Clubs;
 using UnitOfWork;
+using BusinessLogic;
 
 namespace ClubsAPI.Controllers
 {
     public class ClubsController : ApiController
     {
-        private ClubsContext db = new ClubsContext();
+        Logic logic;
+
+        public ClubsController(Logic logic)
+        {
+            this.logic = logic;
+        }
 
         // GET: api/Clubs
         public IQueryable<String> GetClubs()
         {
             List<String> lines = new List<string>();
-            foreach(var club in db.Clubs)
+            foreach(var club in logic.Clubs.GetClubs())
             {
                 lines.Add(club.ToString());
             }
             return lines.AsQueryable<string>();
         }
 
-        // GET: api/Clubs/5
-        [ResponseType(typeof(Club))]
-        public IHttpActionResult GetClub(int id)
-        {
-            Club club = db.Clubs.Find(id);
-            if (club == null)
-            {
-                return NotFound();
-            }
+        //// GET: api/Clubs/5
+        //[ResponseType(typeof(Club))]
+        //public IHttpActionResult GetClub(int id)
+        //{
+        //    Club club = db.Clubs.Find(id);
+        //    if (club == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(club);
-        }
+        //    return Ok(club);
+        //}
 
-        // PUT: api/Clubs/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutClub(int id, Club club)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT: api/Clubs/5
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutClub(int id, Club club)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != club.Id)
-            {
-                return BadRequest();
-            }
+        //    if (id != club.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(club).State = EntityState.Modified;
+        //    db.Entry(club).State = EntityState.Modified;
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ClubExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        db.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ClubExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST: api/Clubs
-        [ResponseType(typeof(Club))]
-        public IHttpActionResult PostClub(Club club)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Clubs
+        //[ResponseType(typeof(Club))]
+        //public IHttpActionResult PostClub(Club club)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Clubs.Add(club);
-            db.SaveChanges();
+        //    db.Clubs.Add(club);
+        //    db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = club.Id }, club);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = club.Id }, club);
+        //}
 
-        // DELETE: api/Clubs/5
-        [ResponseType(typeof(Club))]
-        public IHttpActionResult DeleteClub(int id)
-        {
-            Club club = db.Clubs.Find(id);
-            if (club == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Clubs/5
+        //[ResponseType(typeof(Club))]
+        //public IHttpActionResult DeleteClub(int id)
+        //{
+        //    Club club = db.Clubs.Find(id);
+        //    if (club == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Clubs.Remove(club);
-            db.SaveChanges();
+        //    db.Clubs.Remove(club);
+        //    db.SaveChanges();
 
-            return Ok(club);
-        }
+        //    return Ok(club);
+        //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
-        private bool ClubExists(int id)
-        {
-            return db.Clubs.Count(e => e.Id == id) > 0;
-        }
+        //private bool ClubExists(int id)
+        //{
+        //    return db.Clubs.Count(e => e.Id == id) > 0;
+        //}
     }
 }

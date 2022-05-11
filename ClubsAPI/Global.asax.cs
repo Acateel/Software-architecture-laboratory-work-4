@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using Ninject;
+using UnitOfWork.UnitOfWorks.Services;
+using BusinessLogic;
 
 namespace ClubsAPI
 {
