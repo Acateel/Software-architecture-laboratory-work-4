@@ -19,3 +19,5 @@ E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\BusinessLogic.pdb
 E:\CS\APPZ\lab_4\Main\bin\Debug\Presentation.dll
 E:\CS\APPZ\lab_4\Main\bin\Debug\Presentation.pdb
+E:\CS\APPZ\lab_4\Main\bin\Debug\Ninject.dll
+E:\CS\APPZ\lab_4\Main\bin\Debug\Ninject.xml
