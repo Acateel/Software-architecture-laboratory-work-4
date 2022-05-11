@@ -46,40 +46,26 @@ namespace ClubsAPI.Controllers
             
         }
 
-        //// PUT: api/Clubs/5
-        //[ResponseType(typeof(void))]
-        //public IHttpActionResult PutClub(int id, Club club)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT: api/Clubs/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutClub(int id, ClubModel clubModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Is not valid");
+            }
 
-        //    if (id != club.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (id != clubModel.Id)
+            {
+                return BadRequest();
+            }
 
-        //    db.Entry(club).State = EntityState.Modified;
+            var club = logic.Clubs.SetClub(id);
+            ClubsParser.ChangeClubInfo(club, clubModel);
+            logic.Club.ChangeInfo(club);
 
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!ClubExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
         //// POST: api/Clubs
         //[ResponseType(typeof(Club))]

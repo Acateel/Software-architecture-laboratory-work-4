@@ -17,6 +17,12 @@ namespace Entities.TimeTables
             Table = "FFFFFFFFFFFFFFFFFFFFFFFF";
         }
 
+        public TimeTable(int id, string table)
+        {
+            Id = id;
+            Table = table;
+        }
+
         public bool IsTimeFree(int time)
         {
             return Table[time] == 'F';

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Entities.Clubs;
+using Entities.TimeTables;
 
 namespace ClubsAPI.Models
 {
@@ -21,6 +22,22 @@ namespace ClubsAPI.Models
         public static ClubModel GetClubModel(Club club)
         {
             return new ClubModel(club);
+        }
+
+        public static Club GetClub(ClubModel model)
+        {
+            Club club = new LocClub(model.Name, model.Location, new TimeTable(model.Table_Id, model.Table));
+            club.Id = model.Id;
+            return club;
+        }
+
+        public static void ChangeClubInfo(Club club, ClubModel model)
+        {
+            Club newClub = new LocClub(model.Name, model.Location, new TimeTable(model.Table_Id, model.Table));
+            LocClub locClub = club as LocClub;
+            LocClub newLocClub = newClub as LocClub;
+            locClub.Location = newLocClub.Location;
+            locClub.Name = newLocClub.Name;
         }
     }
 }
