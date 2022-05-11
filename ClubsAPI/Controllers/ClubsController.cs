@@ -81,20 +81,19 @@ namespace ClubsAPI.Controllers
             return CreatedAtRoute("DefaultApi", new { id = club.Id }, club);
         }
 
-        //// DELETE: api/Clubs/5
-        //[ResponseType(typeof(Club))]
-        //public IHttpActionResult DeleteClub(int id)
-        //{
-        //    Club club = db.Clubs.Find(id);
-        //    if (club == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // DELETE: api/Clubs/5
+        [ResponseType(typeof(Club))]
+        public IHttpActionResult DeleteClub(int id)
+        {
+            Club club = logic.Clubs.SetClub(id);
+            if (club == null)
+            {
+                return NotFound();
+            }
 
-        //    db.Clubs.Remove(club);
-        //    db.SaveChanges();
+            logic.Clubs.DeleteClub(id);
 
-        //    return Ok(club);
-        //}
+            return Ok(club);
+        }
     }
 }
