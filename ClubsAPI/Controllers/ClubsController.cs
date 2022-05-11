@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using Entities.Clubs;
 using UnitOfWork;
 using BusinessLogic;
+using ClubsAPI.Models;
 
 namespace ClubsAPI.Controllers
 {
@@ -24,28 +25,26 @@ namespace ClubsAPI.Controllers
         }
 
         // GET: api/Clubs
-        public IQueryable<String> GetClubs()
+        public IQueryable<ClubModel> GetClubs()
         {
-            List<String> lines = new List<string>();
-            foreach(var club in logic.Clubs.GetClubs())
-            {
-                lines.Add(club.ToString());
-            }
-            return lines.AsQueryable<string>();
+            return ClubsParser.GetClubsModel(logic.Clubs.GetClubs());
         }
 
-        //// GET: api/Clubs/5
-        //[ResponseType(typeof(Club))]
-        //public IHttpActionResult GetClub(int id)
-        //{
-        //    Club club = db.Clubs.Find(id);
-        //    if (club == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(club);
-        //}
+        // GET: api/Clubs/5
+        [ResponseType(typeof(ClubModel))]
+        public IHttpActionResult GetClub(int id)
+        {
+            try
+            {
+                var club = logic.Clubs.SetClub(id);
+                return Ok(ClubsParser.GetClubModel(club));
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Id not found");
+            }
+            
+        }
 
         //// PUT: api/Clubs/5
         //[ResponseType(typeof(void))]
