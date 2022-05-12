@@ -37,7 +37,7 @@ namespace ClubsAPI.Controllers
         }
 
         // POST: api/Club
-        public IHttpActionResult Post(int id, string type, TimeTable table)
+        public IHttpActionResult PostByCart(int id, string type, TimeTable table)
         {
             try
             {
@@ -64,13 +64,36 @@ namespace ClubsAPI.Controllers
         }
 
         // PUT: api/Club/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult PutSingUp(int id, int cartId, int time)
         {
-        }
+            try
+            {
+                logic.Clubs.SetClub(id);
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Club Id not found");
+            }
 
-        // DELETE: api/Club/5
-        public void Delete(int id)
-        {
+            if(cartId == 0)
+            {
+                var cart = logic.Club.SingUp(time);
+                return Ok(cart);
+            }
+            else
+            {
+                Cart cart;
+                try
+                {
+                    cart = logic.Carts.GetCart(cartId);
+                }
+                catch (InvalidOperationException)
+                {
+                    return BadRequest("Cart Id not found");
+                }
+                bool singing = logic.Club.SingUp(cart, time);
+                return Ok(singing);
+            }
         }
     }
 }
