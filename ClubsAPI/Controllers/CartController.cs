@@ -8,6 +8,7 @@ using Entities.Carts;
 using UnitOfWork;
 using BusinessLogic;
 using ClubsAPI.Models;
+using Entities.TimeTables;
 
 namespace ClubsAPI.Controllers
 {
@@ -29,19 +30,47 @@ namespace ClubsAPI.Controllers
         }
 
         // GET: api/Cart/5
-        public Cart Get(int id)
+        public IHttpActionResult GetCart(int id)
         {
-            return logic.Carts.GetCart(id);
-        }
+            try
+            {
+                var cart = logic.Carts.GetCart(id);
+                return Ok(cart);
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Id not found");
+            }
 
-        // POST: api/Cart
-        public void Post([FromBody]string value)
-        {
         }
 
         // PUT: api/Cart/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult PutTimeTable(int id, TimeTable table)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Is not valid");
+            }
+
+            try
+            {
+                logic.Carts.GetCart(id);
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Id not found");
+            }
+
+            try
+            {
+                logic.Carts.ChangeTimeTable(id, table);
+                return Ok(table);
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Table did not change");
+            }
+
         }
 
         // DELETE: api/Cart/5
