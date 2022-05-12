@@ -23,7 +23,7 @@ namespace BusinessLogic.Servises
         public void ChangeTimeTable(int cartId, TimeTable timeTable)
         {
             Cart cart = repository.Get(cartId);
-            cart.Table = timeTable;
+            cart.Table.Table = timeTable.Table;
             repository.Update(cart);
             repository.Save();
         }

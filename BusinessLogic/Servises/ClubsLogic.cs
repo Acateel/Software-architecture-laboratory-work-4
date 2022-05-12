@@ -39,9 +39,11 @@ namespace BusinessLogic.Servises
             return repository.GetAll();
         }
 
-        public void SetClub(int id)
+        public Club SetClub(int id)
         {
-            clubLogic.Club = repository.Get(id);
+            var club = repository.Get(id);
+            clubLogic.Club = club;
+            return club;
         }
     }
 }

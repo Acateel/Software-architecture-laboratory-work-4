@@ -10,7 +10,7 @@ namespace BusinessLogic.Interfaces
     public interface IClubsLogic
     {
         IQueryable<Club> GetClubs();
-        void SetClub(int id);
+        Club SetClub(int id);
         void CreateClub(Club club);
         void DeleteClub(int id);
     }
