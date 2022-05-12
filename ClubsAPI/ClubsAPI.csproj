@@ -111,6 +111,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\ClubsController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Global.asax.cs">
