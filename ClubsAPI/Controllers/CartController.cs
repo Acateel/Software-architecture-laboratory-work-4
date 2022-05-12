@@ -24,7 +24,7 @@ namespace ClubsAPI.Controllers
 
 
         // GET: api/Cart
-        public IEnumerable<Cart> Get()
+        public IEnumerable<Cart> GetCarts()
         {
             return logic.Carts.GetCarts().AsEnumerable<Cart>();
         }
@@ -74,8 +74,21 @@ namespace ClubsAPI.Controllers
         }
 
         // DELETE: api/Cart/5
-        public void Delete(int id)
+        public IHttpActionResult DeleteCart(int id)
         {
+            Cart cart;
+            try
+            {
+                cart = logic.Carts.GetCart(id);
+            }
+            catch (InvalidOperationException)
+            {
+                return BadRequest("Id not found");
+            }
+
+            logic.Carts.RemoveCart(id);
+
+            return Ok(cart);
         }
     }
 }
