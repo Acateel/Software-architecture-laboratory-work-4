@@ -1,0 +1,139 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CS\\APPZ\\lab_4\\TestingBussinesLogic\\TestingBussinesLogic.csproj": {}
+  },
+  "projects": {
+    "E:\\CS\\APPZ\\lab_4\\BusinessLogic\\BusinessLogic.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CS\\APPZ\\lab_4\\BusinessLogic\\BusinessLogic.csproj",
+        "projectName": "BusinessLogic",
+        "projectPath": "E:\\CS\\APPZ\\lab_4\\BusinessLogic\\BusinessLogic.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj"
+              },
+              "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CS\\APPZ\\lab_4\\TestingBussinesLogic\\TestingBussinesLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CS\\APPZ\\lab_4\\TestingBussinesLogic\\TestingBussinesLogic.csproj",
+        "projectName": "TestingBussinesLogic",
+        "projectPath": "E:\\CS\\APPZ\\lab_4\\TestingBussinesLogic\\TestingBussinesLogic.csproj",
+        "packagesPath": "C:\\Users\\Taras\\.nuget\\packages\\",
+        "outputPath": "E:\\CS\\APPZ\\lab_4\\TestingBussinesLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Taras\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "E:\\CS\\APPZ\\lab_4\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj"
+              },
+              "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj",
+        "projectName": "UnitOfWork",
+        "projectPath": "E:\\CS\\APPZ\\lab_4\\UnitOfWork\\UnitOfWork.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\CS\\APPZ\\lab_4\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
